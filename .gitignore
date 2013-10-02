@@ -1,5 +1,3 @@
-# LXBATCH
-LSFJOB*
 
 f77
 dump*
@@ -9,5 +7,11 @@ prodLHE*
 MyMCHM4*
 MG_ME*
 
+# LXBATCH
+LSFJOB*
+
 # EDITORS
 *.swp
+
+# GIT
+*.orig
