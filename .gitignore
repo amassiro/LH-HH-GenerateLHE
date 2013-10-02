@@ -1,0 +1,13 @@
+# LXBATCH
+LSFJOB*
+
+f77
+dump*
+.dump*
+test*
+prodLHE*
+MyMCHM4*
+MG_ME*
+
+# EDITORS
+*.swp
