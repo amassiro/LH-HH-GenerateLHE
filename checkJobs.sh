@@ -25,9 +25,14 @@ do
 	NUMBERSEED=`echo "${executable}" | cut -d _ -f 3`	
 	CSI=`echo "${executable}" | cut -d _ -f 4`	
 	#echo "test_"$ENERGY"_"$NUMBERSEED"_"$CSI
-	echo "mv LSFJOB_${ijob} old/"
+	if [$NUMBERSEED == ""]
+	then
+	 a=100
+    else
+     echo "mv LSFJOB_${ijob} old/"
 #	echo "./SubmitBash${MODEL}atENERGYTeV.sh ${NUMBERSEED} ${CSI} ${ENERGY}"
-	echo "./ReSubmitGenerateLHE.py 10 prodLHESO5 ${MODEL} ${ENERGY} ${CSI} ${NUMBERSEED}"
+     echo "./ReSubmitGenerateLHE.py 10 prodLHESO5 ${MODEL} ${ENERGY} ${CSI} ${NUMBERSEED}"
+    fi
 done
 
 
