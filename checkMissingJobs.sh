@@ -13,7 +13,7 @@ do
 			if [[ "$?" != 0 ]]
 			then
 				echo "# My${MODEL}_${CSI}_${NUMBERSEED}_${ENERGY}.tgz does not exist"
-				echo "./SubmitGenerateLHE.py 10 prodLHE ${MODEL} ${ENERGY} ${CSI} ${NUMBERSEED}"
+				echo "./ReSubmitGenerateLHE.py 10 prodLHESO5 ${MODEL} ${ENERGY} ${CSI} ${NUMBERSEED}"
 			fi
 		done
 	done

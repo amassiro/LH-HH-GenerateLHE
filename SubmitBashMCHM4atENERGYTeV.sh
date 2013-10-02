@@ -64,7 +64,6 @@ ln -s /afs/cern.ch/sw/lcg/contrib/g77/3.4.6/x86_64-slc5-gcc44-opt/bin/g77 f77
 echo "PATH= ${PATH}"
 which f77
 
-
 ./bin/generate_events 0 $NAMERESULT
 
 cd ..

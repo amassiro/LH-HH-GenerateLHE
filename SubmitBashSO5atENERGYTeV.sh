@@ -30,11 +30,11 @@ echo " >>> copy the MG folder to tmp"
 
 cd /tmp/
 TESTFOLDER="test_"$ENERGY"_"$NUMBERSEED"_"$CSI
-cp -r /afs/cern.ch/work/a/amassiro/Generation/HH/MG/MG_ME_V4.5.2 ./$TESTFOLDER
+cp -r /afs/cern.ch/work/a/amassiro/Generation/HH/MG/MG_ME_V4.5.2 $TESTFOLDER
 
 cd $TESTFOLDER
 
-MODELFOLDER="MyS05_"$CSI
+MODELFOLDER="MySO5_"$CSI
 
 echo " >>> change parameters in model: energy and seed"
 
@@ -55,10 +55,14 @@ NAMERESULT="SO5at"$ENERGY"TeV"
 
 echo " >>> generate events"
 
+export PATH=${PWD}:${PATH}
+ln -s /afs/cern.ch/sw/lcg/contrib/g77/3.4.6/x86_64-slc5-gcc44-opt/bin/g77 f77
+echo "PATH= ${PATH}"
+which f77
+
 ./bin/generate_events 0 $NAMERESULT
 
 cd ..
-# cp -r MyS05 /afs/cern.ch/work/a/amassiro/Generation/HH/MG/MyS05at13TeV_10k_$NUMBERSEED/
 
 MODELFOLDERTGZ=$MODELFOLDER"_"$NUMBERSEED"_"$ENERGY".tgz"
 
