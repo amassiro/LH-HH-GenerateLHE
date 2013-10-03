@@ -25,7 +25,7 @@ do
 	NUMBERSEED=`echo "${executable}" | cut -d _ -f 3`	
 	CSI=`echo "${executable}" | cut -d _ -f 4`	
 	#echo "test_"$ENERGY"_"$NUMBERSEED"_"$CSI
-	if [$NUMBERSEED == ""]
+	if [ "${NUMBERSEED}" == "" ]
 	then
 	 a=100
     else
