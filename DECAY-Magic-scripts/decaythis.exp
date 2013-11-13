@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+
+set inputfile	[lindex $argv 0]
+set outputfile	[lindex $argv 1]
+set decaymode	[lindex $argv 2]
+
+set timeout 20
+
+spawn "./decay"
+
+expect "1 = decay events in file"						{ send "1\r" }
+expect "input event file: (e.g. events.lhe)"			{ send "${inputfile}\r" }
+expect "name for output file: (e.g. dec-events.lhe)"	{ send "${outputfile}\r" }
+expect "Input particle to be decayed (e.g. t~):"		{ send "h\r" }
+expect "your choice is:"								{ send "${decaymode}\r" }
+
+interact
+
